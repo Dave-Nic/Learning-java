@@ -1,0 +1,83 @@
+package com.davicaudie;
+
+import java.util.Random;
+import java.util.ArrayList;
+
+
+// create a random number
+// use a case select to select either rock, paper or scissors (using a random number in a set frame)
+// the user will then input their choice
+// the programme will then decide who had won
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+// This creates an array of integers
+
+        ArrayList<Integer> aListMarks = new ArrayList<>();
+
+
+//This creates random numbers then places them into an array
+
+        Random rnd = new Random();
+
+        for (int i = 0; i < 10; i++) {
+
+            int n = rnd.nextInt(90);
+
+            n += 1;
+
+            aListMarks.add(n);
+
+        }
+
+//This goes through the array of numbers then find the max using a loop
+
+        int max = aListMarks.get(0);
+
+        int maxIndex = 0;
+
+        for (int i = 1; i < aListMarks.size(); i++){
+
+            if( aListMarks.get(i) > max ){
+                max = aListMarks.get(i);
+                maxIndex = i;
+
+            }
+
+        }
+
+//This goes through then finds the average value in the array using a loop
+
+        int avg = aListMarks.get(0);
+
+        int avgIndex = 0;
+
+        for (int i = 1; i < aListMarks.size(); i ++){
+
+            if( aListMarks.get(i) > avg){
+                avg = aListMarks.get(i);
+                avgIndex = i;
+
+            }
+
+        }
+
+//This outputs all the information found
+
+        System.out.println("ArrayList Max Value is: "
+                            +max
+                            +", Found at Index: "
+                            +maxIndex);
+        //System.out.println("ArrayList Max Value is: "
+               // +avg
+                //+", Found at Index: "
+           //     +avgIndex);
+
+
+        System.out.println(aListMarks);
+
+    }
+}
